@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <NoImmutableCollections>true</NoImmutableCollections>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+    <Compile Remove="**\*" />
+    <Compile Remove="templates\vssdk\.git\**" />
+    <Content Remove="templates\vssdk\.git\**" />
+    <EmbeddedResource Remove="templates\vssdk\.git\**" />
+    <None Remove="templates\vssdk\.git\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="templates\vssdk\Solution.sln.bak" />
+  </ItemGroup>
+
+
+
+</Project>

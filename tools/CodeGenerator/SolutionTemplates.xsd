@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+  elementFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:documentation>SolutionTemplates</xs:documentation>
+  </xs:annotation>
+
+  <xs:attributeGroup name="SolutionTemplateAttributeGroup">
+    <xs:attribute name="Id" type="xs:string" />
+    <xs:attribute name="DisplayName" type="xs:string" />
+  </xs:attributeGroup>
+
+  <xs:element name="SolutionTemplates" type="SolutionTemplates" />
+  <xs:complexType name="SolutionTemplates">
+    <xs:sequence>
+      <xs:element ref="SolutionTemplate" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="SolutionTemplate" type="SolutionTemplate" />
+  <xs:complexType name="SolutionTemplate">
+    <xs:sequence>
+      
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="SolutionInfo" type="SolutionInfo" />
+  <xs:complexType name="SolutionInfo">
+    <xs:sequence>
+      <xs:element name="FileVersion" type="xs:string"  />
+      <xs:element name="VisualStudioVersion" type="xs:string" />
+      <xs:element name="MinimumVisualStudioVersion" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="HideSolutionNode" type="xs:boolean" />
+  </xs:complexType>
+
+  <xs:element name="Solution" type="Solution" />
+  <xs:complexType name="Solution">
+    <xs:sequence>
+      <xs:element ref="SolutionInfo" />
+      <xs:element ref="Projects" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="Projects" type="Projects" />
+  <xs:complexType name="Projects">
+    <xs:sequence>
+      <xs:element ref="Project" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="Project" type="Project" />
+  <xs:complexType name="Project">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ProjectSection" type="ProjectSection" />
+  <xs:complexType name="ProjectSection">
+    <xs:sequence></xs:sequence>
+    <xs:attribute name="Type" type="ProjectSectionType" />
+    <xs:attribute name="Target"
+  </xs:complexType>
+
+  <xs:element name="ProjectTemplate" type="ProjectTemplate" />
+  <xs:complexType name="ProjectTemplate">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ProjectSectionType" type="ProjectSectionType" />
+  <xs:simpleType name="ProjectSectionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SolutionItems" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="ProjectSectionTargetType" type="ProjectSectionTargetType" />
+  <xs:simpleType name="ProjectSectionTargetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="preProject" />
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

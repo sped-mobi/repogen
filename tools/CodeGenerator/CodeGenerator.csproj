@@ -1,0 +1,40 @@
+﻿<Project>
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+
+  <Sdk Name="Microsoft.NET.Sdk" />
+
+  <ItemGroup>
+    <!--<PackageReference Include="Microsoft.TemplateEngine.Abstractions" Version="1.0.2-beta5.19326.2" />
+    <PackageReference Include="Microsoft.TemplateEngine.Core" Version="1.0.2-beta5.19326.2" />
+    <PackageReference Include="Microsoft.TemplateEngine.Edge" Version="1.0.2-beta5.19326.2" />
+    <PackageReference Include="Microsoft.TemplateEngine.IDE" Version="1.0.2-beta5.19326.2" />-->
+    <!--<PackageReference Include="Microsoft.TemplateEngine.Orchestrator.RunnableProjects" Version="1.0.2-beta4-20181108-2195486" />
+    <PackageReference Include="Microsoft.TemplateEngine.Cli" Version="1.0.2-beta4-20181108-2195486" />-->
+    <!--<PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.200" />-->
+
+    <Reference Include="$(RepositoryDirectory)\lib\**\*.dll" Private="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="SolutionFile\**" />
+    <Compile Remove="XXX\**" />
+    <EmbeddedResource Remove="SolutionFile\**" />
+    <EmbeddedResource Remove="XXX\**" />
+    <None Remove="SolutionFile\**" />
+    <None Remove="XXX\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="XXXX\Abstractions\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties vs-repository_1json__JsonSchema="vs-repository-schema.json" /></VisualStudio></ProjectExtensions>
+
+
+</Project>

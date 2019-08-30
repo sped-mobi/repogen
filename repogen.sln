@@ -1,0 +1,69 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29006.145
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeGenerator", "tools\CodeGenerator\CodeGenerator.csproj", "{460EDF56-9FCE-4707-91DB-316D8B692F4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{759BE79F-0951-4B7A-AAB9-C75E0511EE9C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		global.json = global.json
+		NuGet.config = NuGet.config
+		README.md = README.md
+		eng\Versions.props = eng\Versions.props
+		eng\VisualStudio.props = eng\VisualStudio.props
+		eng\VisualStudio.targets = eng\VisualStudio.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{E31F8E77-6BD1-49DE-80F5-B53B0924E323}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.VisualStudio.RepositoryGenerator.Abstractions", "src\Microsoft.VisualStudio.RepositoryGenerator.Abstractions\Microsoft.VisualStudio.RepositoryGenerator.Abstractions.csproj", "{E7C2A204-5064-47F8-9E88-DCD41545F413}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.VisualStudio.RepositoryGenerator.OpenApi", "src\Microsoft.VisualStudio.RepositoryGenerator.OpenApi\Microsoft.VisualStudio.RepositoryGenerator.OpenApi.csproj", "{6DD21EC6-E57A-4AE5-A919-3F222534E46D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.VisualStudio.RepositoryGenerator.VS", "src\Microsoft.VisualStudio.RepositoryGenerator.VS\Microsoft.VisualStudio.RepositoryGenerator.VS.csproj", "{251FB8D2-5F0F-4358-A8E2-9C7983153BC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{F9121844-D284-4175-859A-977E3C1CCAE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.VisualStudio.DotNetTemplates.Extensibility", "src\Microsoft.VisualStudio.DotNetTemplates.Extensibility\Microsoft.VisualStudio.DotNetTemplates.Extensibility.csproj", "{F78E1715-B5FC-4E12-9EF2-2E1FDC7D434E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{460EDF56-9FCE-4707-91DB-316D8B692F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{460EDF56-9FCE-4707-91DB-316D8B692F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C2A204-5064-47F8-9E88-DCD41545F413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C2A204-5064-47F8-9E88-DCD41545F413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C2A204-5064-47F8-9E88-DCD41545F413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C2A204-5064-47F8-9E88-DCD41545F413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DD21EC6-E57A-4AE5-A919-3F222534E46D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD21EC6-E57A-4AE5-A919-3F222534E46D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD21EC6-E57A-4AE5-A919-3F222534E46D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DD21EC6-E57A-4AE5-A919-3F222534E46D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{251FB8D2-5F0F-4358-A8E2-9C7983153BC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{251FB8D2-5F0F-4358-A8E2-9C7983153BC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{251FB8D2-5F0F-4358-A8E2-9C7983153BC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{251FB8D2-5F0F-4358-A8E2-9C7983153BC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78E1715-B5FC-4E12-9EF2-2E1FDC7D434E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78E1715-B5FC-4E12-9EF2-2E1FDC7D434E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78E1715-B5FC-4E12-9EF2-2E1FDC7D434E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78E1715-B5FC-4E12-9EF2-2E1FDC7D434E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{460EDF56-9FCE-4707-91DB-316D8B692F4A} = {E31F8E77-6BD1-49DE-80F5-B53B0924E323}
+		{F78E1715-B5FC-4E12-9EF2-2E1FDC7D434E} = {F9121844-D284-4175-859A-977E3C1CCAE6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DBFC948-1484-4219-AAF4-9EA640129BAC}
+	EndGlobalSection
+EndGlobal

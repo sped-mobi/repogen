@@ -1,0 +1,67 @@
+﻿<Project>
+  <PropertyGroup>
+    <RepositoryDirectory>$(MSBuildThisFileDirectory)</RepositoryDirectory>
+    <DotNetBuildFromSource>true</DotNetBuildFromSource>
+    <DotNetFinalVersionKind>release</DotNetFinalVersionKind>
+    <DisableArcadeTestFramework>true</DisableArcadeTestFramework>
+    <UsingToolXliff Condition="'$(UsingToolXliff)'==''">false</UsingToolXliff>
+    <UsingToolVsSDK Condition="'$(UsingToolVsSDK)'==''">false</UsingToolVsSDK>
+    <UsingToolNetFrameworkReferenceAssemblies Condition="'$(MSBuildRuntimeType)'=='Core'">true</UsingToolNetFrameworkReferenceAssemblies>
+    <IsWpfTempProject>false</IsWpfTempProject>
+    <IsWpfTempProject Condition="$(MSBuildProjectName.EndsWith('_wpftmp'))">true</IsWpfTempProject>
+  </PropertyGroup>
+
+
+  
+  <PropertyGroup>
+    <!-- Respect environment variable for the NuGet Packages Root if set; otherwise, use the current default location -->
+    <NuGetPackageRoot Condition="'$(NuGetPackageRoot)' == ''">$(NUGET_PACKAGES)</NuGetPackageRoot>
+    <NuGetPackageRoot Condition="'$(NuGetPackageRoot)' == '' AND '$(OS)' == 'Windows_NT'">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageRoot Condition="'$(NuGetPackageRoot)' == '' AND '$(OS)' != 'Windows_NT'">$([System.Environment]::GetFolderPath(SpecialFolder.Personal))\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageRoot Condition="!HasTrailingSlash('$(NuGetPackageRoot)')">$(NuGetPackageRoot)\</NuGetPackageRoot>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GitHubOrganization>sped-mobi</GitHubOrganization>
+    <GitHubRepositoryBranch>master</GitHubRepositoryBranch>
+    <GitHubRepositoryName>repogen</GitHubRepositoryName>
+    <GitHubBaseRepositoryUrl>https://github.com/$(GitHubOrganization)/$(GitHubRepositoryName)</GitHubBaseRepositoryUrl>
+    <GitHubRepositoryUrl>$(GitHubBaseRepositoryUrl).git</GitHubRepositoryUrl>
+    <GitHubPackageProjectUrl>$(GitHubBaseRepositoryUrl)/tree/$(GitHubRepositoryBranch)</GitHubPackageProjectUrl>
+  </PropertyGroup>
+
+  <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />
+
+  <PropertyGroup>
+    <IsShipping>false</IsShipping>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <Authors>Brad Marshall</Authors> 
+    <Owners>$(Authors)</Owners>
+    <Company>$(Authors)</Company>
+    <Product>$(AssemblyName)</Product>
+    <Copyright>%A9 $([System.DateTime]::Now.Year) $(Company). All Rights Reserved.</Copyright>
+
+    <PackageDescription>$(Description)</PackageDescription>
+    <PackageReleaseNotes>$(Description)</PackageReleaseNotes>
+      
+    <RepositoryUrl>$(GitHubRepositoryUrl)</RepositoryUrl>
+    <PackageIconUrl>https://go.microsoft.com/fwlink/?LinkID=288859</PackageIconUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>$(GitHubPackageProjectUrl)</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <LangVersion>latest</LangVersion>
+    
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+
+  </PropertyGroup>
+
+  <Import Project="eng\VisualStudio.props" Condition="'$(UsingToolVsSDK)'=='true'" />
+
+</Project>

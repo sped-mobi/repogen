@@ -1,0 +1,31 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>Microsoft.VisualStudio</RootNamespace>
+    <Description>
+      Implementation of Microsoft.VisualStudio.RepositoryGenerator.Abstractions for generating repositories inside Visual Studio.
+    </Description>
+    <PackageReleaseNotes>$(Description)</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <Sdk Name="Microsoft.NET.Sdk" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.VisualStudio.RepositoryGenerator.Abstractions\Microsoft.VisualStudio.RepositoryGenerator.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.200" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0-preview6.19304.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.Composition" />
+  </ItemGroup>
+
+
+
+</Project>

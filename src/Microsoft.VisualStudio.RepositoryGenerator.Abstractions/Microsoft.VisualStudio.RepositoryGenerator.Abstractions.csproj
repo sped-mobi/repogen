@@ -1,0 +1,14 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Microsoft.VisualStudio</RootNamespace>
+    <Description>Interfaces for generating repositories in Visual Studio.</Description>
+    <PackageReleaseNotes>$(Description)</PackageReleaseNotes>
+  </PropertyGroup>
+
+
+  <Sdk Name="Microsoft.NET.Sdk" />
+
+
+</Project>

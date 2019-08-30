@@ -1,0 +1,21 @@
+﻿<Project>
+  <PropertyGroup>   
+    <NoWarn>$(NoWarn);NU5125;NU5105;NU5104;NU5111;NU5110;CS8002</NoWarn>
+    <UseJetBrainsAnnotations Condition="'$(UseJetBrainsAnnotations)'==''">false</UseJetBrainsAnnotations>
+    <JetBrainsAnnotationsPath>$(RepoRoot)eng\JetBrainsAnnotations.cs</JetBrainsAnnotationsPath>
+  </PropertyGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.DotNet.Arcade.Sdk" />
+
+  <Import Project="eng\VisualStudio.targets" Condition="'$(UsingToolVsSDK)'=='true'" />
+  
+  <ItemGroup Condition="'$(UseJetBrainsAnnotations)'=='true'">
+    <Compile Include="$(JetBrainsAnnotationsPath)" Link="JetBrainsAnnotations.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NoImmutableCollections)'!='true'">
+    <PackageReference Include="System.Collections.Immutable" Version="1.6.0-preview6.19303.8" />
+  </ItemGroup>
+
+
+
+</Project>

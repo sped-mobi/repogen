@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Solution xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionInfo>
+    <FormatVersion>12.00</FormatVersion>
+    <VisualStudioVersion>16.0.29006.145</VisualStudioVersion>
+    <MinimumVisualStudioVersion>10.0.40219.1</MinimumVisualStudioVersion>
+    <HideSolutionNode>FALSE</HideSolutionNode>
+  </SolutionInfo>
+  <Projects>
+    <Project>
+      <Name>Build</Name>
+      <Id>{4780FC7C-3011-4A1F-A6D2-96E91D03147D}</Id>
+      <ProjectType>{2150E333-8FDC-42A3-9474-1A3956D46DE8}</ProjectType>
+      <IncludeInBuild>false</IncludeInBuild>
+      <ProjectSection>
+        <Name>SolutionItems</Name>
+        <Target>preSolution</Target>
+        <ProjectItem>.editorconfig</ProjectItem>
+        <ProjectItem>appveyor.yml</ProjectItem>
+        <ProjectItem>Directory.Build.props</ProjectItem>
+        <ProjectItem>Directory.Build.targets</ProjectItem>
+        <ProjectItem>global.json</ProjectItem>
+        <ProjectItem>NuGet.config</ProjectItem>
+        <ProjectItem>README.md</ProjectItem>
+        <ProjectItem>eng\Versions.props</ProjectItem>
+        <ProjectItem>eng\VisualStudio.props</ProjectItem>
+        <ProjectItem>eng\VisualStudio.targets</ProjectItem>
+      </ProjectSection>
+    </Project>
+    <Project>
+      <Name>Core</Name>
+      <Id>{0763A548-7DAA-41DC-A6D9-6CA850D7CDDB}</Id>
+      <ProjectType>{2150E333-8FDC-42A3-9474-1A3956D46DE8}</ProjectType>
+      <IncludeInBuild>false</IncludeInBuild>
+    </Project>
+    <Project>
+      <Name>Tools</Name>
+      <Id>{63F3EB78-A899-4DF0-938D-9BBAAE1E0066}</Id>
+      <ProjectType>{2150E333-8FDC-42A3-9474-1A3956D46DE8}</ProjectType>
+      <IncludeInBuild>false</IncludeInBuild>
+    </Project>
+    <Project>
+      <Name>CodeGenerator</Name>
+      <Id>{02BC3195-0BE1-49F7-9290-721A77DAA902}</Id>
+      <ProjectType>{9A19103F-16F7-4668-BE54-9A1E7A4F7556}</ProjectType>
+      <IncludeInBuild>false</IncludeInBuild>
+    </Project>
+  </Projects>
+  <SolutionConfiguration>
+    <Configuration>Debug</Configuration>
+    <Platform>Any CPU</Platform>
+  </SolutionConfiguration>
+  <SolutionConfiguration>
+    <Configuration>Release</Configuration>
+    <Platform>Any CPU</Platform>
+  </SolutionConfiguration>
+</Solution>
